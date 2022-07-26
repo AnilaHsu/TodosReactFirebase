@@ -55,6 +55,3 @@ npm run
 <h2>Demo</h2>
 
 https://user-images.githubusercontent.com/50144690/180988685-60654b72-fa8f-42f9-a31a-a5c03d201596.mov
-
-
-Builds the app for production to the `build` folder.\
