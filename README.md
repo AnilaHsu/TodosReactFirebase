@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+<h1 align="center">Todo List - React Hooks & Firebase </h1>
+<p align="center">
+    A simple Todo List built using 
+    <a href="https://reactjs.org/">React</a>, 
+     <a href="https://mui.com/">Mantine UI</a> and 
+     <a href="https://firebase.google.com/">Firebase</a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>Usage</h2>
 
-## Available Scripts
+<h3>Install the Package</h3>
 
-In the project directory, you can run:
+```shell
+npm install
+```
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h3>Add Firebase configuration in firebase.js</h3>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```javaScript
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+export function initFirebase() {
 
-### `npm run build`
+  // Replace the app's Firebase project configuration
+  const firebaseConfig = {
+	//...
+};
+  
+  const app = initializeApp(firebaseConfig);
+
+  const db = getFirestore(app);
+  return db;
+}
+
+```
+
+<h3>Run the App</h3>
+
+```shell
+npm run
+```
+
+<h2>Features </h2>
+
+- Add todos, todos will be sorted according to the added time.
+- Ability to directly edit the content of todos.
+- Can view completed todos on done, and completed items will be sorted according to the ticked time.
+- Save todos to Firebase Local Storage and Cloud Firestore  when the state changes.
+- Load the todos from Local Storage and Firebase Cloud Firestore when the site is loaded again.
+- When the Firebase Cloud Firestore is updated, the todos data will be updated instantly.
+
+<h2>Demo</h2>
+
+https://user-images.githubusercontent.com/50144690/180988685-60654b72-fa8f-42f9-a31a-a5c03d201596.mov
+
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
