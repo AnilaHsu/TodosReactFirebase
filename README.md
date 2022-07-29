@@ -6,16 +6,50 @@
      <a href="https://firebase.google.com/">Firebase</a>
 </p>
 
-<h2>Usage</h2>
 
-<h3>Install the Package</h3>
+<h2>Install the Package</h2>
 
 ```shell
 npm install
 ```
 
+<h2>Added Firebase Cloud Firestore in Web</h2>
 
-<h3>Add Firebase configuration in firebase.js</h3>
+<h3>Build project and application on Firebase</h3>
+First go to <a href="https://firebase.google.com/">Firebase</a> and create a project.
+
+Then add a new web application to register it, and add the firebase SDKs to our development program.
+
+
+Here, we initialize Firebase and add the SDK to `firebase.js`. Also, 
+replace `firebaseConfig` with Your web app's Firebase configuration.
+
+```javaScript
+import { initializeApp } from "firebase/app";
+
+
+export function initFirebase() {
+
+  // Replace the app's Firebase project configuration
+  const firebaseConfig = {
+	//...
+};
+  
+  const app = initializeApp(firebaseConfig);
+
+}
+
+```
+<h3>Using Cloud Firestore Features</h3>
+Use Cloud Firestore features in the app and create a Database.
+
+Cloud Firestore provides test mode and locked mode to start our Database, we can choose according to our needs.
+
+Next, specify where to store your Cloud Firestore data and enable Database.
+
+<h3>Initialize Cloud Firestore</h3>
+
+Likewise, we import and initialize Cloud Firestore in the `firebase.js` file.
 
 ```javaScript
 import { initializeApp } from "firebase/app";
@@ -31,13 +65,14 @@ export function initFirebase() {
   
   const app = initializeApp(firebaseConfig);
 
+// Initialize Cloud Firestore and get a reference to the service
   const db = getFirestore(app);
   return db;
 }
 
 ```
 
-<h3>Run the App</h3>
+<h2>Run the App</h2>
 
 ```shell
 npm run
